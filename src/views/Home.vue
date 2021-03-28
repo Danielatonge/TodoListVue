@@ -1,48 +1,30 @@
-# todo-list-vue
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-
 <template>
-  <div class="container">
-    <Header :toggle="showAddTask" @toggle-add-task="toggleAddTask" />
-    <div v-show="showAddTask">
-      <AddTask @add-task="addTask" />
+  <div class="home">
+    <div class="container">
+      <Header :toggle="showAddTask" @toggle-add-task="toggleAddTask" />
+      <div v-show="showAddTask">
+        <AddTask @add-task="addTask" />
+      </div>
+      <Tasks
+        @toggle-reminder="toggleReminder"
+        @delete-task="deleteTask"
+        :tasks="tasks"
+      />
     </div>
-    <Tasks
-      @toggle-reminder="toggleReminder"
-      @delete-task="deleteTask"
-      :tasks="tasks"
-    />
   </div>
 </template>
 
 <script>
-import AddTask from "./components/AddTask.vue";
-import Header from "./components/Header.vue";
-import Tasks from "./components/Tasks.vue";
+import AddTask from "../components/AddTask.vue";
+import Header from "../components/Header.vue";
+import Tasks from "../components/Tasks.vue";
 
 export default {
-  name: "App",
+  name: "Home",
   components: {
+    AddTask,
     Header,
     Tasks,
-    AddTask,
   },
   data() {
     return {
@@ -106,7 +88,7 @@ export default {
 };
 </script>
 
-<style>
+<style >
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 * {
   box-sizing: border-box;

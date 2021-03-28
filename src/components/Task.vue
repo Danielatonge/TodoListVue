@@ -36,4 +36,9 @@ export default {
   align-items: center;
   justify-content: space-between;
 }
+
+.task p {
+  display: flex;
+  align-items: center;
+}
 </style>

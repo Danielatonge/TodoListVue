@@ -52,7 +52,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
 .add-form {
   margin-bottom: 40px;
 }
