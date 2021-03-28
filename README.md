@@ -14,3 +14,5 @@ npm run serve
 ```
 npm run build
 ```
+### Demo
+![App Demo](https://github.com/Danielatonge/todo-list-vue/blob/master/public/task-tracker.png)
